@@ -30,18 +30,20 @@ const Homepage = () => {
 
     return (
         <div className='relative'>
-            <div className='h-[50vh] sm:h-[65vh] w-full relative overflow-hidden'>
+            <div className='h-[40vh] sm:h-[65vh] w-full relative overflow-hidden'>
                 {carouselImages.map((image, index) => (
-                    <div className='flex justify-center items-center'>
+                    <div
+                        key={image.id}
+                        className='flex justify-center items-center'>
                         <img
-                            key={image.id}
+
                             src={image.link}
                             alt={`Slide ${index + 1}`}
                             className={`object-cover sm:object-cover absolute top-0 left-0 h-full w-full transition-opacity  ${index === currentImageIndex ? 'opacity-100 transition-transform duration-[6500ms] ease-linear scale-110' : 'opacity-0'
                                 }`}
                         />
                         <h2 className={`${index === currentImageIndex ? 'absolute bottom-40 left-30 p-4 text-white flex justify-center items-center text-2xl sm:text-4xl sm:bottom-56' : 'hidden'} `}
-                            key={image.id}
+
                         >
                             {image.text}
                         </h2>

@@ -102,7 +102,9 @@ const Location = () => {
                     </div>
 
                     {details.map((detail, index) => (
-                        <div className='flex flex-row text-[12px] mx-20 sm:mx-[12cm] sm:text-[15px]'>
+                        <div
+                            key={index}
+                            className='flex flex-row text-[12px] mx-20 sm:mx-[12cm] sm:text-[15px]'>
                             <div className={`flex flex-col w-[40%] justify-center border border-dotted border-gray-400  items-center ${index < details.length - 1 ? 'border-t-0 border-l-0 ' : 'border-b-0 border-l-0 border-t-0'}`}>
                                 <p className='py-3 sm:py-4'>
                                     {detail.first}
